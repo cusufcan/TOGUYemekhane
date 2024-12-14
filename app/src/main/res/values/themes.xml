@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="Base.Theme.TOGUYemekhane" parent="Theme.Material3.DayNight" />
+
+    <style name="Theme.TOGUYemekhane" parent="Base.Theme.TOGUYemekhane" />
+</resources>
