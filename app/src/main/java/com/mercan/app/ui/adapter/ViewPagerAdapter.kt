@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.mercan.app.ui.view.menudetail.MenuListFragment
+import com.mercan.app.util.getDayOfWeek
 
 class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 5
@@ -11,7 +12,8 @@ class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun createFragment(position: Int): Fragment {
         val fragment = MenuListFragment()
         fragment.arguments = Bundle().apply {
-            putInt("object", position)
+            putInt("position", position)
+            putBoolean("is_active", position == getDayOfWeek())
         }
         return fragment
     }

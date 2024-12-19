@@ -21,7 +21,6 @@
             android:id="@+id/imgIcon"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:background="@drawable/meal_first"
             android:backgroundTint="?attr/colorOnSurface"
             android:contentDescription="Item Icon" />
 

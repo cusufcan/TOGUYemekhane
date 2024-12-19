@@ -1,9 +1,9 @@
-package com.mercan.app.utils
+package com.mercan.app.util
 
 import java.util.Calendar
 
-fun getDayName(day: Int): String {
-    return when (day) {
+fun Int.getDayName(): String {
+    return when (this) {
         0 -> "Pazartesi"
         1 -> "Salı"
         2 -> "Çarşamba"
