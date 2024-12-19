@@ -21,8 +21,8 @@
             android:id="@+id/imgIcon"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:backgroundTint="?attr/colorOnSurface"
-            android:contentDescription="Item Icon" />
+            android:contentDescription="Item Icon"
+            app:tint="?attr/colorOnSurface" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvName"
