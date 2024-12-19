@@ -1,7 +1,7 @@
 package com.mercan.app.ui.adapter.menulist
 
-import android.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
+import com.mercan.app.R
 import com.mercan.app.databinding.ListItemBinding
 import com.mercan.app.util.Icons
 
@@ -21,7 +21,8 @@ class MenuListViewHolder(private val binding: ListItemBinding) :
         )
 
         if (isActive) {
-            binding.cardView.strokeColor = Color.parseColor("#6FC272")
+            val context = binding.root.context
+            binding.cardView.strokeColor = context.getColor(R.color.list_tile_active)
         }
     }
 }
