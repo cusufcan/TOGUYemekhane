@@ -21,7 +21,7 @@
             android:id="@+id/imgIcon"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:contentDescription="Item Icon"
+            android:contentDescription="@string/menu_icon_desc"
             app:tint="?attr/colorOnSurface" />
 
         <com.google.android.material.textview.MaterialTextView
