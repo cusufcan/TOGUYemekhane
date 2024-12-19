@@ -1,4 +1,4 @@
-package com.mercan.app.ui.adapter
+package com.mercan.app.ui.adapter.viewpager
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

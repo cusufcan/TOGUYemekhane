@@ -13,7 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mercan.app.databinding.FragmentHomeBinding
-import com.mercan.app.ui.adapter.ViewPagerAdapter
+import com.mercan.app.ui.adapter.viewpager.ViewPagerAdapter
 import com.mercan.app.ui.viewmodel.MenuListViewModel
 import com.mercan.app.ui.viewmodel.MenuViewModel
 import com.mercan.app.util.UiState
