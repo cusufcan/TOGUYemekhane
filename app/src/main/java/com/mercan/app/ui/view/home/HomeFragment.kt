@@ -19,8 +19,10 @@ import com.mercan.app.ui.viewmodel.MenuViewModel
 import com.mercan.app.util.UiState
 import com.mercan.app.util.getDayName
 import com.mercan.app.util.getDayOfWeek
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -34,8 +36,7 @@ class HomeFragment : Fragment() {
     private val menuListViewModel: MenuListViewModel by activityViewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -91,9 +92,7 @@ class HomeFragment : Fragment() {
     private fun errorLogic(view: View, state: UiState.Error) {
         binding.progressBar.visibility = View.INVISIBLE
         Snackbar.make(
-            view,
-            state.message,
-            Snackbar.LENGTH_SHORT
+            view, state.message, Snackbar.LENGTH_SHORT
         ).show()
     }
 }
