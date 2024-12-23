@@ -17,10 +17,10 @@ import com.mercan.app.databinding.FragmentHomeBinding
 import com.mercan.app.ui.adapter.viewpager.ViewPagerAdapter
 import com.mercan.app.ui.viewmodel.MenuListViewModel
 import com.mercan.app.ui.viewmodel.MenuViewModel
-import com.mercan.app.util.UIMenuState
-import com.mercan.app.util.UIWeekState
 import com.mercan.app.util.getDayName
 import com.mercan.app.util.getDayOfWeek
+import com.mercan.app.util.state.UIMenuState
+import com.mercan.app.util.state.UIWeekState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
