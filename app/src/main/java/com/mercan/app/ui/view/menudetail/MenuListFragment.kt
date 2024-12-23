@@ -45,9 +45,9 @@ class MenuListFragment : Fragment() {
 
     private fun observeMenuData() {
         menuListViewModel.menuData.observe(viewLifecycleOwner) {
-            if (it.dailyToguMenuLists.isEmpty()) return@observe
+            if (it.dailyMenuLists.isEmpty()) return@observe
 
-            val menu = it.dailyToguMenuLists[position]
+            val menu = it.dailyMenuLists[position]
             binding.recyclerView.adapter = MenuListAdapter(menu, isActive())
         }
     }

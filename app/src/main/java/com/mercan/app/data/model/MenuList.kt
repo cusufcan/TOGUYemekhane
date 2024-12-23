@@ -1,5 +1,5 @@
 package com.mercan.app.data.model
 
-data class ToguMenuList(
+data class MenuList(
     val menuList: MutableList<String>,
 )
