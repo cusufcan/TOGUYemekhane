@@ -3,7 +3,7 @@ package com.mercan.app.ui.adapter.menulist
 import androidx.recyclerview.widget.RecyclerView
 import com.mercan.app.R
 import com.mercan.app.databinding.ListItemBinding
-import com.mercan.app.util.Icons
+import com.mercan.app.util.Icon
 
 class MenuListViewHolder(private val binding: ListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -11,12 +11,12 @@ class MenuListViewHolder(private val binding: ListItemBinding) :
         binding.tvName.text = mealName
         binding.imgIcon.setImageResource(
             when (position) {
-                0 -> Icons.SOUP.icon
-                1 -> Icons.MEAL_FIRST.icon
-                2 -> Icons.MEAL_SECOND.icon
-                3 -> Icons.SWEET.icon
-                4 -> Icons.TOTAL_CALORIES.icon
-                else -> Icons.MEAL_FIRST.icon
+                0 -> Icon.SOUP.icon
+                1 -> Icon.MEAL_FIRST.icon
+                2 -> Icon.MEAL_SECOND.icon
+                3 -> Icon.SWEET.icon
+                4 -> Icon.TOTAL_CALORIES.icon
+                else -> Icon.MEAL_FIRST.icon
             }
         )
 
