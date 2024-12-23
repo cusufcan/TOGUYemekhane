@@ -1,6 +1,6 @@
 # 📱 TOGÜ Yemekhane
 
-Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barındıran uygulama. 
+Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barındıran uygulama.
 
 ---
 
@@ -8,16 +8,17 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 - Haftalık çıkan yemeklerin listesi.
 - İnternet erişimi olmadığında son kaydedilen haftaya ulaşım kolaylığı.
+- Okulun bakiye görüntüleme ve yükleme sistemine kolay erişim.
 
 ---
 
 ## 📸 Ekran Görüntüleri
 
 1. **Ana Sayfa**  
-![Ana Sayfa](https://via.placeholder.com/300)
+   ![Ana Sayfa](https://via.placeholder.com/300)
 
 2. **Kullanıcı Profil Sayfası**  
-![Profil Sayfası](https://via.placeholder.com/300)
+   ![Profil Sayfası](https://via.placeholder.com/300)
 
 ---
 
@@ -46,13 +47,14 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 ## 🛡️ Lisans
 
-Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakabilirsiniz.
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına
+bakabilirsiniz.
 
 ---
 
 ## 📞 İletişim
 
 Herhangi bir soru veya öneriniz varsa, benimle iletişime geçebilirsiniz:
- 
+
 - LinkedIn: [linkedin.com/in/cusufcan](https://linkedin.com/in/cusufcan)
 - Email: [yusufcanmercan.info@gmail.com](mailto:yusufcanmercan.info@gmail.com)
