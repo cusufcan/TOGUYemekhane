@@ -2,4 +2,6 @@
     <string name="app_name">TOGÜ Yemekhane</string>
 
     <string name="menu_icon_desc">Menu Icon</string>
+
+    <string name="loading">Yükleniyor…</string>
 </resources>

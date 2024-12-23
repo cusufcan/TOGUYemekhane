@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.mercan.app.R
 import com.mercan.app.databinding.FragmentHomeBinding
 import com.mercan.app.ui.adapter.viewpager.ViewPagerAdapter
 import com.mercan.app.ui.viewmodel.MenuListViewModel
@@ -107,7 +108,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun weekLoadingLogic() {
-        binding.tvWeek.text = "Yükleniyor..."
+        binding.tvWeek.text = getString(R.string.loading)
     }
 
     private fun weekSuccessLogic(state: UIWeekState.Success) {
