@@ -1,25 +1,33 @@
 package com.mercan.app.data.remote
 
-import com.mercan.app.data.model.ToguMenuData
-import com.mercan.app.data.model.ToguMenuList
+import com.mercan.app.data.model.MenuData
+import com.mercan.app.data.model.MenuList
 import com.mercan.app.data.model.WeekData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
 import javax.inject.Inject
 
-class ToguMenuRemoteSource @Inject constructor() {
-    suspend fun getWeekData(): WeekData {
-        val document = withContext(Dispatchers.IO) {
-            Jsoup.connect("https://sosyaltesisler.gop.edu.tr/yemekhane_menu.aspx").get()
-        }
+class MenuRemoteSource @Inject constructor() {
+    suspend fun getWeekData(): WeekData? {
+        try {
+            val document = withContext(Dispatchers.IO) {
+                Jsoup.connect("https://sosyaltesisler.gop.edu.tr/yemekhane_menu.aspx").get()
+            }
 
-        val data = document.select("#ContentPlaceHolder1_haftaBasi").toMutableList().first()
-        val weekData = WeekData(data.text())
-        return weekData
+            val weekStartDate = document.select("#ContentPlaceHolder1_haftaBasi")
+            val weekEndDate = document.select("#ContentPlaceHolder1_haftaSonu")
+            val weekData = WeekData(
+                startDate = weekStartDate.text(),
+                endDate = weekEndDate.text(),
+            )
+            return weekData
+        } catch (e: Exception) {
+            return null
+        }
     }
 
-    suspend fun getData(): ToguMenuData {
+    suspend fun getData(): MenuData {
         // Verileri internetten çek
         val document = withContext(Dispatchers.IO) {
             Jsoup.connect("https://sosyaltesisler.gop.edu.tr/yemekhane_menu.aspx").get()
@@ -45,10 +53,10 @@ class ToguMenuRemoteSource @Inject constructor() {
             parts.remove(parts.last())
             parts.add("$secondLastElement $lastElement")
 
-            ToguMenuList(parts)
+            MenuList(parts)
         }
 
         // Sonucu geriye döndür
-        return ToguMenuData(dailyMenus.toMutableList())
+        return MenuData(dailyMenus.toMutableList())
     }
 }

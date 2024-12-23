@@ -45,4 +45,23 @@
             android:layout_gravity="center"
             android:visibility="visible" />
     </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardWeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="12dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="12dp"
+        app:strokeWidth="2dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

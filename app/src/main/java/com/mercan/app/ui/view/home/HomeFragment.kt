@@ -16,7 +16,8 @@ import com.mercan.app.databinding.FragmentHomeBinding
 import com.mercan.app.ui.adapter.viewpager.ViewPagerAdapter
 import com.mercan.app.ui.viewmodel.MenuListViewModel
 import com.mercan.app.ui.viewmodel.MenuViewModel
-import com.mercan.app.util.UiState
+import com.mercan.app.util.UIMenuState
+import com.mercan.app.util.UIWeekState
 import com.mercan.app.util.getDayName
 import com.mercan.app.util.getDayOfWeek
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,7 +45,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         bindViews()
         bindingTablayoutWithViewPager()
         observeScrapedData(view)
@@ -69,30 +69,56 @@ class HomeFragment : Fragment() {
         lifecycleScope.launch {
             menuViewModel.menuState.collect { state ->
                 when (state) {
-                    is UiState.Loading -> loadingLogic()
-                    is UiState.Success -> successLogic(state)
-                    is UiState.Error -> errorLogic(view, state)
+                    is UIMenuState.Loading -> dataLoadingLogic()
+                    is UIMenuState.Success -> dataSuccessLogic(state)
+                    is UIMenuState.Error -> dataErrorLogic(view, state)
+                }
+            }
+        }
+
+        lifecycleScope.launch {
+            menuViewModel.weekState.collect { state ->
+                when (state) {
+                    is UIWeekState.Loading -> weekLoadingLogic()
+                    is UIWeekState.Success -> weekSuccessLogic(state)
+                    is UIWeekState.Error -> weekErrorLogic(state)
                 }
             }
         }
     }
 
-    private fun loadingLogic() {
+    private fun dataLoadingLogic() {
         binding.progressBar.visibility = View.VISIBLE
         binding.viewPager.visibility = View.INVISIBLE
     }
 
-    private fun successLogic(state: UiState.Success) {
+    private fun dataSuccessLogic(state: UIMenuState.Success) {
         binding.progressBar.visibility = View.INVISIBLE
         binding.viewPager.visibility = View.VISIBLE
 
-        menuListViewModel.menuData.postValue(state.data)
+        menuListViewModel.menuData.postValue(state.menuData)
     }
 
-    private fun errorLogic(view: View, state: UiState.Error) {
+    private fun dataErrorLogic(view: View, state: UIMenuState.Error) {
         binding.progressBar.visibility = View.INVISIBLE
         Snackbar.make(
             view, state.message, Snackbar.LENGTH_SHORT
         ).show()
+    }
+
+    private fun weekLoadingLogic() {
+        binding.tvWeek.text = "Yükleniyor..."
+    }
+
+    private fun weekSuccessLogic(state: UIWeekState.Success) {
+        val startDate = state.weekData.startDate
+        val endDate = state.weekData.endDate
+        val weekString = String.format("%s - %s", startDate, endDate)
+
+        binding.tvWeek.text = weekString
+    }
+
+    private fun weekErrorLogic(state: UIWeekState.Error) {
+        binding.tvWeek.text = state.message
     }
 }
