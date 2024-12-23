@@ -5,7 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class WeekData(
-    val week: String,
+    val startDate: String,
+    val endDate: String,
 ) {
     @PrimaryKey
     var id: Int = 0
