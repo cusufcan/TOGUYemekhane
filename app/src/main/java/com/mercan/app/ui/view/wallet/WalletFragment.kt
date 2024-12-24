@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.mercan.app.databinding.FragmentWalletBinding
@@ -45,7 +46,8 @@ class WalletFragment : Fragment() {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView() {
-        webView.getSettings().javaScriptEnabled = true
+        webView.webViewClient = WebViewClient()
+        webView.settings.javaScriptEnabled = true
         webView.loadUrl("https://kampuskart.gop.edu.tr/User/Login")
     }
 }
