@@ -15,4 +15,9 @@
         android:name="com.mercan.app.ui.view.menudetail.MenuListFragment"
         android:label="fragment_menu_detail"
         tools:layout="@layout/fragment_menu_list" />
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.mercan.app.ui.view.wallet.WalletFragment"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" />
 </navigation>
