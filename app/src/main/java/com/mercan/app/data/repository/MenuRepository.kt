@@ -14,7 +14,7 @@ class MenuRepository @Inject constructor(
     suspend fun getData(): MenuData {
         val remoteWeekData = menuRemoteSource.getWeekData()
         val localWeekData = menuLocalSource.getWeekData()
-
+// TODO: Silinecek
         Log.i("MercanLogger", remoteWeekData.toString())
         Log.i("MercanLogger", localWeekData.toString())
 
