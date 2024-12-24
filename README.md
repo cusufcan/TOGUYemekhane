@@ -13,8 +13,8 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 ---
 
 ## 📸 Ekran Görüntüleri
-   ![TOGUYemekhaneLight](https://github.com/user-attachments/assets/4a97e9e5-7317-401d-a8ad-ca293ba3284e)
-   ![TOGUYemekhaneDark](https://github.com/user-attachments/assets/dc404e63-8662-43b8-be96-d770e776d1b0)
+![TOGUYemekhaneLight](https://github.com/user-attachments/assets/4a97e9e5-7317-401d-a8ad-ca293ba3284e)
+![TOGUYemekhaneDark](https://github.com/user-attachments/assets/dc404e63-8662-43b8-be96-d770e776d1b0)
 
 ---
 
