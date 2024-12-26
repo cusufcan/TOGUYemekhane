@@ -19,7 +19,7 @@ import com.mercan.app.ui.state.UIMenuState
 import com.mercan.app.ui.state.UIWeekState
 import com.mercan.app.ui.viewmodel.MenuListViewModel
 import com.mercan.app.ui.viewmodel.MenuViewModel
-import com.mercan.app.util.getDayName
+import com.mercan.app.util.Day
 import com.mercan.app.util.getDayOfWeek
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -62,7 +62,7 @@ class HomeFragment : Fragment() {
         viewPager.currentItem = getDayOfWeek()
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = position.getDayName()
+            tab.text = Day.entries[position].toString()
         }.attach()
     }
 
