@@ -1,5 +1,6 @@
 package com.mercan.app.data.remote
 
+import com.mercan.app.core.Constants
 import com.mercan.app.data.model.MenuData
 import com.mercan.app.data.model.MenuList
 import com.mercan.app.data.model.WeekData
@@ -12,11 +13,11 @@ class MenuRemoteSource @Inject constructor() {
     suspend fun getWeekData(): WeekData? {
         try {
             val document = withContext(Dispatchers.IO) {
-                Jsoup.connect("https://sosyaltesisler.gop.edu.tr/yemekhane_menu.aspx").get()
+                Jsoup.connect(Constants.BASE_URL).get()
             }
 
-            val weekStartDate = document.select("#ContentPlaceHolder1_haftaBasi")
-            val weekEndDate = document.select("#ContentPlaceHolder1_haftaSonu")
+            val weekStartDate = document.select(Constants.WEEK_START_ID)
+            val weekEndDate = document.select(Constants.WEEK_END_ID)
             val weekData = WeekData(
                 startDate = weekStartDate.text(),
                 endDate = weekEndDate.text(),
@@ -29,7 +30,7 @@ class MenuRemoteSource @Inject constructor() {
 
     suspend fun getData(): MenuData {
         val document = withContext(Dispatchers.IO) {
-            Jsoup.connect("https://sosyaltesisler.gop.edu.tr/yemekhane_menu.aspx").get()
+            Jsoup.connect(Constants.BASE_URL).get()
         }
 
         val data = document.select(".style19").toMutableList()
