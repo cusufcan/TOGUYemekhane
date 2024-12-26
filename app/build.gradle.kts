@@ -5,6 +5,7 @@ plugins {
     id("kotlin-kapt")
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -82,4 +83,7 @@ dependencies {
 
     // Gson
     implementation(libs.gson)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
 }
