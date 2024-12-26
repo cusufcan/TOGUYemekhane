@@ -9,6 +9,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.mercan.app.core.Constants
 import com.mercan.app.databinding.FragmentWalletBinding
 
 class WalletFragment : Fragment() {
@@ -48,6 +49,6 @@ class WalletFragment : Fragment() {
     private fun initWebView() {
         webView.webViewClient = WebViewClient()
         webView.settings.javaScriptEnabled = true
-        webView.loadUrl("https://kampuskart.gop.edu.tr/User/Login")
+        webView.loadUrl(Constants.WALLET_URL)
     }
 }
