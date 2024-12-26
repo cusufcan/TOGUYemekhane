@@ -1,4 +1,4 @@
-package com.mercan.app.util.state
+package com.mercan.app.ui.state
 
 import com.mercan.app.data.model.MenuData
 

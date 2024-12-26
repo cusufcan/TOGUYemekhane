@@ -3,8 +3,8 @@ package com.mercan.app.ui.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mercan.app.data.repository.MenuRepository
-import com.mercan.app.util.state.UIMenuState
-import com.mercan.app.util.state.UIWeekState
+import com.mercan.app.ui.state.UIMenuState
+import com.mercan.app.ui.state.UIWeekState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
