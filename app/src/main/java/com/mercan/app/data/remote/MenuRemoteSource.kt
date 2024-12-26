@@ -28,25 +28,22 @@ class MenuRemoteSource @Inject constructor() {
     }
 
     suspend fun getData(): MenuData {
-        // Verileri internetten çek
         val document = withContext(Dispatchers.IO) {
             Jsoup.connect("https://sosyaltesisler.gop.edu.tr/yemekhane_menu.aspx").get()
         }
 
-        // Verileri küçült
         val data = document.select(".style19").toMutableList()
-        val dataSubList = data.subList(5, data.size)
+        val dataSubList = data.subList(5, data.size).map { it.text() }
 
-        // Her bir öğeyi işleyip listeye geçir
         val dailyMenus = dataSubList.map { element ->
             val regex = Regex("(?=[A-ZÇŞĞÜİÖ])")
-            val parts = element.text().split(regex).map {
+            val parts = element.split(regex).map {
                 it.trim()
             }.filter {
                 it.isNotBlank()
             }.toMutableList()
 
-            // "Toplam Kalori: 1300" kısmını birleştir
+            if (parts.size <= 1) return@map MenuList(parts)
             val lastElement = parts.last()
             parts.remove(parts.last())
             val secondLastElement = parts.last()
@@ -56,7 +53,6 @@ class MenuRemoteSource @Inject constructor() {
             MenuList(parts)
         }
 
-        // Sonucu geriye döndür
         return MenuData(dailyMenus.toMutableList())
     }
 }
