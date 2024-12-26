@@ -3,6 +3,7 @@ package com.mercan.app.di
 import android.content.Context
 import androidx.room.Room
 import com.mercan.app.data.local.MenuDatabase
+import com.mercan.app.data.repository.PermissionRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,4 +23,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideToguMenuDao(menuDatabase: MenuDatabase) = menuDatabase.getDao()
+
+    @Singleton
+    @Provides
+    fun providePermissionRepository(@ApplicationContext context: Context) =
+        PermissionRepository(context)
 }
