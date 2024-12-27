@@ -2,6 +2,8 @@
 
 Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barındıran uygulama.
 
+[![Get it on Google Play Store](https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg)](https://play.google.com/store/apps/details?id=com.mercan.app)
+
 ---
 
 ## 🛠️ Özellikler
@@ -20,18 +22,18 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 ## 🛠️ Kullanılan Teknolojiler
 
-- **Kotlin Kapt**: Açıklama...
-- **Kotlin Ksp**: Açıklama...
-- **Hilt**: Açıklama...
-- **Jetpack Navigation**: Açıklama...
-- **Coroutines**: Açıklama...
-- **Jsoup**: Açıklama...
-- **LifeCycle**: Açıklama...
-- **Room**: Açıklama...
-- **Gson**: Açıklama...
-- **WebView**: Açıklama...
-- **Firebase Firestore**: Açıklama...
-- **Firebase Cloud Messaging**: Açıklama...
+- **Kotlin Kapt**: Proje içinde veri bağlama veya DI (bağımlılık enjeksiyonu) işlemlerinde kullanılan, derleme zamanında anotasyonları işleyerek kod üretimini kolaylaştıran bir araçtır.
+- **Kotlin Ksp**: Daha hızlı kod üretimi için kullanılan, özellikle Room gibi veri tabanı bileşenleriyle uyumlu bir sembol işleme aracıdır.
+- **Hilt**: Uygulamanın modüler bir yapıda geliştirilmesi ve bağımlılıkların kolayca yönetilmesi için tercih edilen bir DI kütüphanesidir.
+- **Jetpack Navigation**: Yemekhane uygulamasında farklı ekranlar (ör. menü listesi, bakiye yükleme) arasında kullanıcı dostu ve hatasız gezinmeyi sağlar.
+- **Coroutines**: Ağ istekleri veya veritabanı işlemleri gibi asenkron görevlerin daha etkin bir şekilde yönetilmesine olanak tanır.
+- **Jsoup**: Yemekhane bilgilerini bir web sayfasından almak için kullanılan HTML işleme ve veri çıkarma kütüphanesidir.
+- **LifeCycle**: Uygulamanın yaşam döngüsüne bağlı bileşenlerin doğru yönetilmesi ve kaynakların optimize edilmesi için kullanılır.
+- **Room**: Yerel SQLite veritabanıyla daha kolay ve güvenilir veri depolama işlemleri gerçekleştirilmesini sağlar.
+- **Gson**: JSON formatındaki veriyle çalışarak, verilerin kolayca işlenip nesnelere dönüştürülmesini veya tersini sağlar.
+- **WebView**: Kullanıcılara doğrudan uygulama içinde web içeriklerini (ör. bakiye yükleme) görüntüleme olanağı sunar.
+- **Firebase Firestore**: Yemek menülerinin gerçek zamanlı olarak saklanması için kullanılan bulut tabanlı bir NoSQL veritabanıdır.
+- **Firebase Cloud Messaging**: Kullanıcılara yeni yemek menüsü veya duyurularla ilgili anlık bildirimler göndermek için kullanılır.
 
 ---
 
