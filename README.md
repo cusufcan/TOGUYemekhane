@@ -41,13 +41,25 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 ```
 /app
-   /src
-      /main
-         /java
-            com.example.appname    # Ana uygulama kodları
-         /res
-            layout                 # XML tasarımları
-            drawable               # Görsel kaynaklar
+   /core
+   /data
+      /local
+      /model
+      /remote
+      /repository
+   /di
+   /ui
+      /adapter
+         /menulist
+         /viewpager
+      /state
+      /view
+         /home
+         /main
+         /menudetail
+         /wallet
+      /viewmodel
+   /util
 ```
 
 ---
