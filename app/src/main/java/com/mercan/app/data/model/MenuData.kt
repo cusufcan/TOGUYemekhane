@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class MenuData(
     val dailyMenuLists: MutableList<MenuList>,
 ) {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     var id: Int = 0
 }
