@@ -11,7 +11,7 @@ import com.mercan.app.data.model.WeekData
         MenuData::class,
         WeekData::class,
     ],
-    version = 1,
+    version = 2,
     exportSchema = false,
 )
 @TypeConverters(Converter::class)
