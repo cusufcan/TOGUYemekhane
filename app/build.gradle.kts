@@ -16,8 +16,8 @@ android {
         applicationId = "com.mercan.app"
         minSdk = 25
         targetSdk = 35
-        versionCode = 19
-        versionName = "3.0.2"
+        versionCode = 20
+        versionName = "3.0.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
