@@ -27,7 +27,7 @@ class MenuListFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentMenuListBinding.inflate(inflater, container, false)
         return binding.root
@@ -45,7 +45,8 @@ class MenuListFragment : Fragment() {
 
     private fun observeMenuData() {
         menuListViewModel.menuData.observe(viewLifecycleOwner) {
-            if (it.dailyMenuLists.isEmpty()) return@observe
+            if (it.dailyMenuLists == null) return@observe
+            if (it.dailyMenuLists.any { menuList -> menuList.menuList == null }) return@observe
 
             val menu = it.dailyMenuLists[position]
             binding.recyclerView.adapter = MenuListAdapter(menu, isActive())

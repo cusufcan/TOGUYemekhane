@@ -6,14 +6,16 @@ import com.mercan.app.data.repository.MenuRepository
 import com.mercan.app.ui.state.UIMenuState
 import com.mercan.app.ui.state.UIWeekState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
 class MenuViewModel @Inject constructor(
-    private val menuRepository: MenuRepository
+    private val menuRepository: MenuRepository,
 ) : ViewModel() {
     private val _menuState = MutableStateFlow<UIMenuState>(UIMenuState.Loading)
     val menuState: StateFlow<UIMenuState> get() = _menuState
@@ -29,7 +31,9 @@ class MenuViewModel @Inject constructor(
     private fun fetchData() {
         viewModelScope.launch {
             try {
-                val data = menuRepository.getData()
+                val data = withContext(Dispatchers.IO) {
+                    menuRepository.getData()
+                }
                 _menuState.value = UIMenuState.Success(data)
             } catch (e: Exception) {
                 _menuState.value =
@@ -41,7 +45,9 @@ class MenuViewModel @Inject constructor(
     private fun fetchWeekData() {
         viewModelScope.launch {
             try {
-                val weekData = menuRepository.getWeekData()
+                val weekData = withContext(Dispatchers.IO) {
+                    menuRepository.getWeekData()
+                }
                 _weekState.value = UIWeekState.Success(weekData)
             } catch (e: Exception) {
                 _weekState.value =

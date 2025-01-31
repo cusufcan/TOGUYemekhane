@@ -18,7 +18,7 @@ object AppModule {
     @Provides
     fun provideToguMenuDatabase(@ApplicationContext context: Context) = Room.databaseBuilder(
         context, MenuDatabase::class.java, "togu_menu_database",
-    ).build()
+    ).fallbackToDestructiveMigration().build()
 
     @Singleton
     @Provides

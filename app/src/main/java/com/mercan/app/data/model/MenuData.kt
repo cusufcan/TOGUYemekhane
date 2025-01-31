@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class MenuData(
-    val dailyMenuLists: MutableList<MenuList>,
+    val dailyMenuLists: MutableList<MenuList>?,
 ) {
     @PrimaryKey
     var id: Int = 0

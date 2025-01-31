@@ -15,10 +15,10 @@ class MenuFirestoreSource @Inject constructor() {
         val collection = "menus"
         val document = weekData.startDate.reformatWeekDateForFirebase()
 
-        firestore.collection(collection).document(document).set(
-            data.dailyMenuLists.mapIndexed { index, dailyMenu ->
-                "$index ${Day.entries[index]}" to dailyMenu.menuList
-            }.toMap()
-        )
+        data.dailyMenuLists?.mapIndexed { index, dailyMenu ->
+            "$index ${Day.entries[index]}" to dailyMenu.menuList
+        }?.toMap()?.let {
+            firestore.collection(collection).document(document).set(it)
+        }
     }
 }

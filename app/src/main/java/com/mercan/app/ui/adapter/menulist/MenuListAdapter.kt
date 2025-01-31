@@ -19,9 +19,9 @@ class MenuListAdapter(
         return MenuListViewHolder(binding)
     }
 
-    override fun getItemCount() = menuList.menuList.size
+    override fun getItemCount() = menuList.menuList?.size ?: 0
 
     override fun onBindViewHolder(holder: MenuListViewHolder, position: Int) {
-        holder.bind(position, menuList.menuList[position], isActive)
+        holder.bind(position, menuList.menuList?.get(position) ?: "", isActive)
     }
 }
