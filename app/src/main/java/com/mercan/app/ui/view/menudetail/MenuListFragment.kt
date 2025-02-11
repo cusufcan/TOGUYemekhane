@@ -45,7 +45,7 @@ class MenuListFragment : Fragment() {
 
     private fun observeMenuData() {
         menuListViewModel.menuData.observe(viewLifecycleOwner) {
-            if (it.dailyMenuLists == null) return@observe
+            if (it.dailyMenuLists.isNullOrEmpty()) return@observe
             if (it.dailyMenuLists.any { menuList -> menuList.menuList == null }) return@observe
 
             val menu = it.dailyMenuLists[position]
