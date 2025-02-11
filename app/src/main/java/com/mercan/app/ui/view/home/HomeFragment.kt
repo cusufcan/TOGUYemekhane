@@ -87,10 +87,13 @@ class HomeFragment : Fragment() {
         binding.progressBar.visibility = View.INVISIBLE
         binding.viewPager.visibility = View.VISIBLE
 
-        val startDate = state.menuData.weekData?.startDate
-        val endDate = state.menuData.weekData?.endDate
-        val weekString = String.format("%s - %s", startDate, endDate)
-        binding.tvWeek.text = weekString
+        binding.tvWeek.text = if (state.menuData.weekData != null) {
+            val startDate = state.menuData.weekData.startDate
+            val endDate = state.menuData.weekData.endDate
+            String.format("%s - %s", startDate, endDate)
+        } else {
+            getString(R.string.data_null)
+        }
 
         menuListViewModel.menuData.postValue(state.menuData)
     }
