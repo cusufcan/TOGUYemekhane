@@ -54,6 +54,6 @@ class MenuRemoteSource @Inject constructor() {
             MenuList(parts)
         }
 
-        return MenuData(dailyMenus.toMutableList())
+        return MenuData(dailyMenus.toMutableList(), getWeekData())
     }
 }
