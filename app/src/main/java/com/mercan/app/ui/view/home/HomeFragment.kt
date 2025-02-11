@@ -16,7 +16,6 @@ import com.mercan.app.R
 import com.mercan.app.databinding.FragmentHomeBinding
 import com.mercan.app.ui.adapter.viewpager.ViewPagerAdapter
 import com.mercan.app.ui.state.UIMenuState
-import com.mercan.app.ui.state.UIWeekState
 import com.mercan.app.ui.viewmodel.MenuListViewModel
 import com.mercan.app.ui.viewmodel.MenuViewModel
 import com.mercan.app.util.Day
@@ -38,7 +37,7 @@ class HomeFragment : Fragment() {
     private val menuListViewModel: MenuListViewModel by activityViewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -76,50 +75,31 @@ class HomeFragment : Fragment() {
                 }
             }
         }
-
-        lifecycleScope.launch {
-            menuViewModel.weekState.collect { state ->
-                when (state) {
-                    is UIWeekState.Loading -> weekLoadingLogic()
-                    is UIWeekState.Success -> weekSuccessLogic(state)
-                    is UIWeekState.Error -> weekErrorLogic(state)
-                }
-            }
-        }
     }
 
     private fun dataLoadingLogic() {
         binding.progressBar.visibility = View.VISIBLE
         binding.viewPager.visibility = View.INVISIBLE
+        binding.tvWeek.text = getString(R.string.loading)
     }
 
     private fun dataSuccessLogic(state: UIMenuState.Success) {
         binding.progressBar.visibility = View.INVISIBLE
         binding.viewPager.visibility = View.VISIBLE
 
+        val startDate = state.menuData.weekData?.startDate
+        val endDate = state.menuData.weekData?.endDate
+        val weekString = String.format("%s - %s", startDate, endDate)
+        binding.tvWeek.text = weekString
+
         menuListViewModel.menuData.postValue(state.menuData)
     }
 
     private fun dataErrorLogic(view: View, state: UIMenuState.Error) {
         binding.progressBar.visibility = View.INVISIBLE
+        binding.tvWeek.text = state.message
         Snackbar.make(
             view, state.message, Snackbar.LENGTH_SHORT
         ).show()
-    }
-
-    private fun weekLoadingLogic() {
-        binding.tvWeek.text = getString(R.string.loading)
-    }
-
-    private fun weekSuccessLogic(state: UIWeekState.Success) {
-        val startDate = state.weekData.startDate
-        val endDate = state.weekData.endDate
-        val weekString = String.format("%s - %s", startDate, endDate)
-
-        binding.tvWeek.text = weekString
-    }
-
-    private fun weekErrorLogic(state: UIWeekState.Error) {
-        binding.tvWeek.text = state.message
     }
 }

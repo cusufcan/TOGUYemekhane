@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mercan.app.data.repository.MenuRepository
 import com.mercan.app.ui.state.UIMenuState
-import com.mercan.app.ui.state.UIWeekState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,12 +19,8 @@ class MenuViewModel @Inject constructor(
     private val _menuState = MutableStateFlow<UIMenuState>(UIMenuState.Loading)
     val menuState: StateFlow<UIMenuState> get() = _menuState
 
-    private val _weekState = MutableStateFlow<UIWeekState>(UIWeekState.Loading)
-    val weekState: StateFlow<UIWeekState> get() = _weekState
-
     init {
         fetchData()
-        fetchWeekData()
     }
 
     private fun fetchData() {
@@ -38,20 +33,6 @@ class MenuViewModel @Inject constructor(
             } catch (e: Exception) {
                 _menuState.value =
                     UIMenuState.Error("Veriler alınırken bir hata oluştu ${e.message}")
-            }
-        }
-    }
-
-    private fun fetchWeekData() {
-        viewModelScope.launch {
-            try {
-                val weekData = withContext(Dispatchers.IO) {
-                    menuRepository.getWeekData()
-                }
-                _weekState.value = UIWeekState.Success(weekData)
-            } catch (e: Exception) {
-                _weekState.value =
-                    UIWeekState.Error("Veriler alınırken bir hata oluştu ${e.message}")
             }
         }
     }
