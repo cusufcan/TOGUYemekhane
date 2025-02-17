@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.mercan.app.core.Constants
 import com.mercan.app.databinding.FragmentWalletBinding
 
+
 class WalletFragment : Fragment() {
     private var _binding: FragmentWalletBinding? = null
     private val binding get() = _binding!!
@@ -20,7 +21,7 @@ class WalletFragment : Fragment() {
     private lateinit var webView: WebView
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentWalletBinding.inflate(inflater, container, false)
         return binding.root
