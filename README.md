@@ -1,4 +1,4 @@
-# 📱 TOGÜ Yemekhane
+# TOGÜ Yemekhane
 
 Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barındıran uygulama.
 
@@ -6,7 +6,7 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 ---
 
-## 🛠️ Özellikler
+## Özellikler
 
 - Haftalık çıkan yemeklerin listesi.
 - İnternet erişimi olmadığında son kaydedilen haftaya ulaşım kolaylığı.
@@ -14,13 +14,13 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 ---
 
-## 📸 Ekran Görüntüleri
+## Ekran Görüntüleri
 ![TOGUYemekhaneLight](https://github.com/user-attachments/assets/4a97e9e5-7317-401d-a8ad-ca293ba3284e)
 ![TOGUYemekhaneDark](https://github.com/user-attachments/assets/dc404e63-8662-43b8-be96-d770e776d1b0)
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## Kullanılan Teknolojiler
 
 - **Kotlin Kapt**: Proje içinde veri bağlama veya DI (bağımlılık enjeksiyonu) işlemlerinde kullanılan, derleme zamanında anotasyonları işleyerek kod üretimini kolaylaştıran bir araçtır.
 - **Kotlin Ksp**: Daha hızlı kod üretimi için kullanılan, özellikle Room gibi veri tabanı bileşenleriyle uyumlu bir sembol işleme aracıdır.
@@ -37,7 +37,7 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 ---
 
-## 📢 Proje Yapısı
+## Proje Yapısı
 
 ```
 /app
@@ -64,7 +64,7 @@ Tokat Gaziosmanpaşa Üniversitesi Sosyal Tesisler Yemekhane Menüsü'nü barın
 
 ---
 
-## 🛡️ Lisans
+## Lisans
 
 Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına
 bakabilirsiniz.
