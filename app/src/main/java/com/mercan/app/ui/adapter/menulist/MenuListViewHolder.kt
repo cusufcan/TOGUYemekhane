@@ -15,7 +15,8 @@ class MenuListViewHolder(private val binding: ListItemBinding) :
                 1 -> Icon.MEAL_FIRST.icon
                 2 -> Icon.MEAL_SECOND.icon
                 3 -> Icon.SWEET.icon
-                4 -> Icon.TOTAL_CALORIES.icon
+                4 -> Icon.MEAL_VEGAN.icon
+                5 -> Icon.TOTAL_CALORIES.icon
                 else -> Icon.MEAL_FIRST.icon
             }
         )

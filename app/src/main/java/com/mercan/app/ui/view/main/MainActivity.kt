@@ -8,8 +8,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mercan.app.databinding.ActivityMainBinding
 import com.mercan.app.ui.viewmodel.PermissionViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var navHostFragment: NavHostFragment
-    private lateinit var bottomNavigationView: BottomNavigationView
 
     private val permissionViewModel: PermissionViewModel by viewModels()
 
@@ -50,9 +47,6 @@ class MainActivity : AppCompatActivity() {
         navHostFragment = supportFragmentManager.findFragmentById(
             binding.fragmentContainerView.id
         ) as NavHostFragment
-
-        bottomNavigationView = binding.bottomNavigationView
-        bottomNavigationView.setupWithNavController(navHostFragment.navController)
     }
 
     private fun requestPermission() {
